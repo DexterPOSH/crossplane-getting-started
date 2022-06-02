@@ -1,0 +1,15 @@
+apiVersion: storage.azure.crossplane.io/v1alpha3
+kind: Account
+metadata:
+  name: teststoragecrossplane999
+spec:
+  resourceGroupName: test-rg-crossplane
+  storageAccountSpec:
+    kind: Storage
+    location: eastus
+    sku:
+      name: Standard_LRS
+  writeConnectionSecretToRef:
+    namespace: default
+    name: storageaccount-connection-secret
+  
